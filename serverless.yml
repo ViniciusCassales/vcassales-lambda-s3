@@ -11,10 +11,10 @@
 #
 # Happy Coding!
 
-service: aws-lambda
+service: vcassales-lambda-s3
 # app and org for use with dashboard.serverless.com
-#app: your-app-name
-#org: your-org-name
+app: vcassales-lambda-s3
+org: viniciuscassales
 
 # You can pin your service to only deploy with a specific Serverless version
 # Check out our docs for more details
@@ -23,6 +23,16 @@ service: aws-lambda
 provider:
   name: aws
   runtime: nodejs12.x
+  region: us-east-1
+  profile: default
+
+  iamRoleStatements:
+    - Effect: "Allow"
+      Action:
+        - "s3:ListBucket"
+        - "s3:GetBucket"
+        - "s3:PutBucket"
+      Resource: "arn:aws:s3:::vcassales-lambda-s3-operations-bucket/*"
 
 # you can overwrite defaults here
 #  stage: dev
@@ -58,8 +68,13 @@ provider:
 #    - exclude-me-dir/**
 
 functions:
-  hello:
-    handler: handler.hello
+  appendText:
+    handler: handler.appendText
+    events:
+      - http:
+          path: appentText
+          method: put
+
 #    The following are a few example events you can configure
 #    NOTE: Please make sure to change your handler code to work with those events
 #    Check the event documentation for details
@@ -101,13 +116,13 @@ functions:
 #      variable2: value2
 
 # you can add CloudFormation resource templates here
-#resources:
-#  Resources:
-#    NewResource:
-#      Type: AWS::S3::Bucket
-#      Properties:
-#        BucketName: my-new-bucket
-#  Outputs:
-#     NewOutput:
-#       Description: "Description for the output"
-#       Value: "Some output value"
+resources:
+  Resources:
+    S3OperationsBucket:
+      Type: AWS::S3::Bucket
+      Properties:
+        BucketName: vcassales-lambda-s3-operations-bucket
+  Outputs:
+     NewOutput:
+       Description: "Description for the output"
+       Value: "Some output value"
