@@ -1,0 +1,78 @@
+{
+	"info": {
+		"_postman_id": "a397d691-27ad-499d-b6d4-ad8963f47c2b",
+		"name": "AWS-Lambda",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "appendText",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"url": {
+					"raw": "https://fiu6miobse.execute-api.us-east-1.amazonaws.com/dev/appendText?text=lambda",
+					"protocol": "https",
+					"host": [
+						"fiu6miobse",
+						"execute-api",
+						"us-east-1",
+						"amazonaws",
+						"com"
+					],
+					"path": [
+						"dev",
+						"appendText"
+					],
+					"query": [
+						{
+							"key": "text",
+							"value": "lambda"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getFile",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://vcassales-lambda-s3-operations-bucket.s3.amazonaws.com/file.txt?AWSAccessKeyId=ASIAXFFSH3CRFKOCJANR&Expires=1580998216&Signature=hXQvFShx0ENKvQybZmO%2FyUDjJTo%3D&x-amz-security-token=IQoJb3JpZ2luX2VjEP7%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLWVhc3QtMSJHMEUCIDO%2BIRI%2FWdlnWWbhrvOBHm5CLEC98CJQHx3t5rymcJw8AiEAk3F0%2FH9lZC0SYQ9c%2BPcM4JC5RwxVbJiPfst2C6XeWRMq6gEIp%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FARABGgw0OTIxNDc1NjI2NTgiDLlKTLNpDa%2F7UP2Beiq%2BAfkO1V%2FBxYHVjYWm7E5SVVvHFTWCaiBUDoVu3LgccnTxVRMCxauqrYAI%2BvbsU52HgMqQW1AYonOqQI6%2F6uDiU6LmEX3piuV6KqvfgRF4Mfn59jCtZq36zJI2kTWrR0IxqtaZqrQV850zyGguhct7f6QGK24Olf7pdlfJF%2FJgFlLvknpTIDW4A2l2hvHkWiYW%2BAB1eB9BiEV9TnwLGUnpc0%2FA40ty4kaNdtqNaHv2MkaLgt5h0GqO4xEyO9ZNWmAwxLXw8QU64AGdVVH4gIIo6DTRoAikhLdKuoTGmawWQzL2viI9EjrhD0Qxro%2BBVEAzRwZEfaySKavYA8yj2k8jAlpTB2aMMpg4nI7qZn8%2Br6ql2fMY5mELBgTgmaS%2F3PC%2Bw%2B3b9Z%2FGZQC1gKvOGOPHKuguHUHn9myfveeeyOPbXC%2FEQ2V7eZEok%2F1WmX96qQWPHVDwP3sekLMqv4j8C5MvLTgApiABwCACHkTrNUtFEHrC33kjIF51OJf%2FNddJibhJ6TFRKBddRu8h4JzLwmGKu4cIHtXL17RkH8GEB%2FTZGQBldl1hhhq5Tg%3D%3D",
+					"protocol": "https",
+					"host": [
+						"vcassales-lambda-s3-operations-bucket",
+						"s3",
+						"amazonaws",
+						"com"
+					],
+					"path": [
+						"file.txt"
+					],
+					"query": [
+						{
+							"key": "AWSAccessKeyId",
+							"value": "ASIAXFFSH3CRFKOCJANR"
+						},
+						{
+							"key": "Expires",
+							"value": "1580998216"
+						},
+						{
+							"key": "Signature",
+							"value": "hXQvFShx0ENKvQybZmO%2FyUDjJTo%3D"
+						},
+						{
+							"key": "x-amz-security-token",
+							"value": "IQoJb3JpZ2luX2VjEP7%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLWVhc3QtMSJHMEUCIDO%2BIRI%2FWdlnWWbhrvOBHm5CLEC98CJQHx3t5rymcJw8AiEAk3F0%2FH9lZC0SYQ9c%2BPcM4JC5RwxVbJiPfst2C6XeWRMq6gEIp%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FARABGgw0OTIxNDc1NjI2NTgiDLlKTLNpDa%2F7UP2Beiq%2BAfkO1V%2FBxYHVjYWm7E5SVVvHFTWCaiBUDoVu3LgccnTxVRMCxauqrYAI%2BvbsU52HgMqQW1AYonOqQI6%2F6uDiU6LmEX3piuV6KqvfgRF4Mfn59jCtZq36zJI2kTWrR0IxqtaZqrQV850zyGguhct7f6QGK24Olf7pdlfJF%2FJgFlLvknpTIDW4A2l2hvHkWiYW%2BAB1eB9BiEV9TnwLGUnpc0%2FA40ty4kaNdtqNaHv2MkaLgt5h0GqO4xEyO9ZNWmAwxLXw8QU64AGdVVH4gIIo6DTRoAikhLdKuoTGmawWQzL2viI9EjrhD0Qxro%2BBVEAzRwZEfaySKavYA8yj2k8jAlpTB2aMMpg4nI7qZn8%2Br6ql2fMY5mELBgTgmaS%2F3PC%2Bw%2B3b9Z%2FGZQC1gKvOGOPHKuguHUHn9myfveeeyOPbXC%2FEQ2V7eZEok%2F1WmX96qQWPHVDwP3sekLMqv4j8C5MvLTgApiABwCACHkTrNUtFEHrC33kjIF51OJf%2FNddJibhJ6TFRKBddRu8h4JzLwmGKu4cIHtXL17RkH8GEB%2FTZGQBldl1hhhq5Tg%3D%3D"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
