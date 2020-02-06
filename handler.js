@@ -1,18 +1,18 @@
-'use strict';
+"use strict";
 
-const manageFile = require('./manageFile')
+const manageFile = require("./manageFile");
 
-module.exports.appendText = async event => {
-    const text = event.queryStringParameters.text;
+module.exports.appendText = (event, context, callback) => {
+  const text = event.queryStringParameters.text;
 
-    manageFile.appendText(text).then(result =>{
-        const response = {
-            statusCode: 200,
-            body: JSON.stringify({
-                result
-            })
-        };
+  manageFile.appendText(text).then(result => {
+    const response = {
+      statusCode: 200,
+      body: JSON.stringify({
+        result
+      })
+    };
 
-        callback(null, response);
-    });
+    callback(null, response);
+  });
 };
